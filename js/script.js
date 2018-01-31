@@ -17,10 +17,11 @@
 
 // Songs
 var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
+	"title":"Rhyme or Reason",
+	"artist":"Eminem",
+	"mp3-url":"https://open.spotify.com/track/45JxylFwaThjLsRBuzcfoL",
+	"image-url":"https://i.scdn.co/image/85083088a097332a0a49676e9c0f63b0099fac10",
+	"duration": "5:02"
 }
 
 var myPlayList = [
@@ -49,7 +50,7 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  
+  $("body").append(mySong);
 
 
 
