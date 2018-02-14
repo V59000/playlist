@@ -50,14 +50,17 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  $("body").append(mySong);
-
 
 
 });
 
 function displayList(){
-
+for(var i = 0; i < myPlayList.length; i++){
+	$(".list-group").append("<h3>" + myPlayList[i].title + "</h3>");
+	$(".list-group-item").append("<p>" + myPlayList[i].artist + "</p>");
+	$(".list-group-item").append("<a href ="+ myPlayList[i]["mp3-url"]+ "> click me </a>");
+	$(".list-group-item").append("<img src=" + myPlayList[i]["image-url"] + ">" + "</img>");
+}
 
   
 }
@@ -72,4 +75,23 @@ function addSong(){
  
   
   
+}
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key))
+        {size++;}
+    }
+    return size;
+};
+
+
+var size = Object.size(myPlayList);
+
+var keys = Object.keys(myPlayList);
+
+function fixSize() {
+	for (var i = 0; i < myPlayList.length; i++) {
+		
+	}
 }
