@@ -50,13 +50,13 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-
-
+displayList();
+closeModal();
 });
 
 function displayList(){
 for(var i = 0; i < myPlayList.length; i++){
-	$(".list-group").append("<h3>" + myPlayList[i].title + "</h3>");
+	$(".list-group-item").append("<h3>" + myPlayList[i].title + "</h3>");
 	$(".list-group-item").append("<p>" + myPlayList[i].artist + "</p>");
 	$(".list-group-item").append("<a href ="+ myPlayList[i]["mp3-url"]+ "> click me </a>");
 	$(".list-group-item").append("<img src=" + myPlayList[i]["image-url"] + ">" + "</img>");
@@ -72,11 +72,21 @@ function clearList(){
 }
 
 function addSong(){
- 
-  
-  
+	$("#newSongs").click(function(){
+		var title = $("#titleInput").val();
+		var artist = $("#artistInput").val();
+		var songLink = $("#songLink").val();
+		var image = $("#albumInput").val();
+		myPlayList.push({
+			title:title,
+			artist:artist,
+			"mp3-url":songLink,
+			"image-url":image
+		})
+	});
+	
 }
-Object.size = function(obj) {
+/*Object.size = function(obj) {
     var size = 0, key;
     for (key in obj) {
         if (obj.hasOwnProperty(key))
@@ -89,9 +99,15 @@ Object.size = function(obj) {
 var size = Object.size(myPlayList);
 
 var keys = Object.keys(myPlayList);
+*/
 
-function fixSize() {
-	for (var i = 0; i < myPlayList.length; i++) {
-		
-	}
+
+function closeModal() {
+	$("#close").click(function(){
+		// $("#customModal").modal('hide');
+		var modalDiv = $("#customModal");
+		console.log(modalDiv);
+		modalDiv.modal("hide");
+	});
+	
 }

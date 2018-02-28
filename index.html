@@ -21,25 +21,49 @@
   </head>
 
   <body>
-    <div class="container text-center">
-      <h1> My Playlist </h1>
-      <input>
-      <input>
-      <input>
-      <input>
-      <button> Add Song </button>
-      <div class="songs">
-        
-        
-        
-      </div>  
-      
+    <h1> My Playlist </h1>
+     <div id="customModal" class="modal fade" role="dialog" display="center">
+      <div class="modal-dialogue">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Song Information</h3>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="container text-center">
+                <div class = "form-group">
+                  <label>Title</label>
+                  <input class = "form-control" type = "text" id = "titleInput">
+                </div>
+                <div class = "form-group">
+                  <label>Artist</label>
+                  <input class = "form-control" type = "text" id = "artistInput">
+                </div>
+                <div class = "form-group">
+                  <label>Song link (from Spotify)</label>
+                  <input class = "form-control" type = "text" id = "linkInput">
+                </div>
+                <div class = "form-group">
+                  <label>Album cover link</label>
+                  <input class = "form-control" type = "text" id = "albumInput">
+                </div>
+                <div class = "modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+                  <button id = "newSongs"> Add Song </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>
+    <div id = "song-list" class="container-fluid">
       <ul class="list-group">
         <li class = "list-group-item"></li>
       </ul>
     </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customModal">Add Song</button>
+    
   </body>
 
 </html>
