@@ -50,8 +50,14 @@ var myPlayList = [
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
+$("#start").click(function(){
+	clearList();
+	displayList();
+})	
+$("#close").click(function(){
+	closeModal();
+})
 displayList();
-closeModal();
 });
 
 function displayList(){
@@ -66,7 +72,7 @@ for(var i = 0; i < myPlayList.length; i++){
 }
 
 function clearList(){
-  
+  myPlayList.empty();
   
   
 }
@@ -103,11 +109,9 @@ var keys = Object.keys(myPlayList);
 
 
 function closeModal() {
-	$("#close").click(function(){
 		// $("#customModal").modal('hide');
-		var modalDiv = $("#customModal");
-		console.log(modalDiv);
+		var modalDiv = $("#custoModal");
+		console.log(modalDiv.toString());
 		modalDiv.modal("hide");
-	});
 	
 }
